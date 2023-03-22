@@ -1,0 +1,149 @@
+ @import url('https://fonts.googleapis.com/css2?family=Golos+Text&family=IBM+Plex+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+body{
+    background-color:hsl(51, 85%, 92%);
+    /* font-family: 'Golos Text', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+}
+
+/* ---------NAVBAR----------- */
+.navbar-collapse li{
+    margin: 0 6%; 
+    
+}
+
+.navbar{
+    background: #FEFAE0;
+    padding: .8rem;
+    box-shadow: 0 0 2rem #A9B388;
+}
+
+.navbar a{
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #A9B388;
+}
+
+
+.navbar .nav-link.active {
+    color: #566f52;
+}
+
+.navbar .nav-link:hover{
+    color: #566F52
+}
+
+
+/* ----------SHOP------ */
+ .row{
+    background-color: transparent;
+    padding-top: 10%;
+} 
+
+.col{
+    /* background-color: white;
+   
+    align-items: center; */
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 15px; 
+    background-color: white;
+    /* margin: 0 auto; */
+    padding: 40px 10px;
+    text-align: center;
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.10),
+      0 1px 2px rgba(0,0,0,0.22);
+      padding: 16px 20px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+}
+
+
+.product-img {
+    max-width: 150px;
+    max-height: 150px;
+    align-items: center;
+}
+
+.product-img:hover{
+    transform: scale(1.2);
+}
+
+.product-category {
+    font-weight: 650;
+}
+
+.add-to-cart{
+    text-decoration: none;
+    border: none;
+    /* border-color: #566F52; */
+    padding: 3px 7px;
+    
+    
+    border-radius: 0.8rem;
+     box-shadow: 0 0 0.3rem #222;
+    background-color:#A9B388;
+    color:#FEFAE0
+
+}
+
+.add-to-cart:hover{
+    color: #566f52;
+    transition: 0.5s;
+    
+}
+
+
+#pricecon{
+    background-color: white;
+    position:relative;
+}
+
+
+.procuct-price-container{
+align-self: stretch;
+
+}
+
+.more{
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+}
+
+
+ #nameT{
+    font-weight: 600;
+ } 
+
+  .hero {
+    background-image: url('img/framsida.jpg');
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+ }
+
+ .img{
+    width: 100px;
+    align-items: center;
+    
+ }
+
+#col-cart{
+    background-color: transparent;
+    box-shadow: none;
+    
+
+}
+ 
