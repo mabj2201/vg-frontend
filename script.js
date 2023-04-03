@@ -62,13 +62,6 @@ function removeAllProducts() {
 }
 
 
-//function updateNumber() {
-//    let number = document.getElementById('number');
-//    count = productsCart.length;
-//    number.innerHTML = count;
-//    localStorage.setItem('store-cart-number', count);
-//}
-
 function total() {
     let total = 0;
     let temp = JSON.parse(localStorage.getItem('productsC')) || [];
@@ -94,7 +87,6 @@ fetch('https://fakestoreapi.com/products')
             let description = product.description;
             let title = product.title;
             let pId = product.id;
-           // updateNumber();
 
             const markup = `
         <div class="col h-100"   
@@ -111,7 +103,7 @@ fetch('https://fakestoreapi.com/products')
             </div>
             <div class="col-md-6">
             <button type="button" data-productId=${pId}  class="add-to-cart" 
-            data-bs-toggle="modal" data-bs-target="#modalForm">Beställ</button>
+            data-bs-toggle="modal" data-bs-target="#modalForm">Add to Cart</button>
             </div>
             </div>
             </div>
@@ -197,21 +189,45 @@ function shoppingCart() {
     let temp = JSON.parse(localStorage.getItem('productsC'));
     let outputhtml = "";
     for (let i = 0; i < temp.length; i++) {
-        outputhtml += `<div class="col h-30 d-flex align-items-center " id="col-cart">
-        <img src="${temp[i].img}" alt="" class="img">
-        <p><b>${temp[i].title}</b></p>
-        <p><b>Pris:</b> $${temp[i].price}</p>
-        <p><b>Totalsumma:</b> $${temp[i].totalPrice}</p>
-        <p>${temp[i].qt}st</p>
-        <div class="col-6">
-        <div class="float-right">
-        <button type="button" data-productId=${temp[i].id}  class="btn btn-dark" onclick=" addItemCart(${temp[i].id})" id="addB">+</button>
-        <button type="button" data-productId=${temp[i].id}  class="btn btn-dark" onclick="removeItemcart(${temp[i].id})">-</button>
-        <button type="button" data-productId=${temp[i].id}  class="btn btn-danger" onclick="deleteItemcart(${temp[i].id})" >delete</button>
+        let title = temp[i].title;
+        outputhtml += `    <div class="col-1" id="col-cart">
+        <img src="${temp[i].img}" alt="" class="img" style="width:60px">
+    </div>
+    <div class="col" id="col-title">
+        <p id="cart-title"><b>${title.length > 20 ? title.substring(0,20).concat('..') : title}</b></p>
+    </div>
+    <div class="col-auto" id="qt-col">
+        <div class="row">
+            <div class="col-3" id="col-plus">
+                <button type="button" data-productId=${temp[i].id} class="btn btn-dark btn-sm"
+                    onclick=" addItemCart(${temp[i].id})" id="addB">+</button>
+            </div>
+            <div class="col-1" id="col-qt">
+                <p>${temp[i].qt}</p>
+            </div>
+            <div class="col-2" id="col-minus">
+                <button type="button" data-productId=${temp[i].id} class="btn btn-dark btn-sm"
+                    onclick="removeItemcart(${temp[i].id})">-</button>
+            </div>
+            <div class="col-1" id="col-delete">
+                <button type="button" data-productId=${temp[i].id} class="btn btn-danger btn-sm" 
+                    onclick="deleteItemcart(${temp[i].id})"><i class="bi bi-trash"></i></button>
+            </div>
         </div>
-        </div>
-        </div>
-        <hr>
+    </div>
+    <div class="col" id="col-price">
+        <p> $${temp[i].price}</p>
+    </div>
+    <div class="col" id="col-price2">
+        <p>
+            <b:</b> $${temp[i].totalPrice}
+            
+        </p>
+    </div>
+
+    </div>
+    <hr>
+
         `
         document.getElementById('testing').innerHTML = outputhtml;
         total()

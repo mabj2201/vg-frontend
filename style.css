@@ -140,10 +140,40 @@ align-self: stretch;
     
  }
 
-#col-cart{
-    background-color: transparent;
+#col-cart .col{
+
     box-shadow: none;
     
 
 }
- 
+
+
+#cart-title,
+#col-cart,
+#col-title,
+#col-qt,
+#col-price,
+#col-price2,
+#col-plus,
+#col-minus,
+#col-delete
+{
+    
+    background-color: transparent;
+    box-shadow: none;
+
+}
+
+#col-title{
+    font-size: 12px;
+}
+
+
+.total{
+    text-align: end;
+}
+
+#checkout-col{
+background-color: transparent;
+box-shadow: none;    
+}
